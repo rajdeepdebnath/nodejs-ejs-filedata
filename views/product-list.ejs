@@ -1,0 +1,16 @@
+<%- include('./includes/header.ejs') %>
+<%- include('./includes/nav.ejs') %>
+    <h3>Product List</h3>
+    <div id="product-list">
+        <% products.forEach(function(product){ %>
+            <div class="product-card">
+                <div style="font-size: 22px;color:green;"><%= product.ProductName %></div>
+                <div style="font-size: 19px;color:brown;">Price:$<%= product.Price %></div>
+                <div style="display: flex;justify-content: space-around;">
+                    <a href="/product/details/<%= product.Id %>">Details</a>
+                    <a href="/cart/add-to-cart/<%= product.Id %>">Add to Cart</a>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+<%- include('./includes/footer.ejs') %>

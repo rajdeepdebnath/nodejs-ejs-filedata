@@ -1,0 +1,18 @@
+<%- include('./includes/header.ejs') %>
+<%- include('./includes/nav.ejs') %>
+<h3>Cart list</h3>
+<h4>Total Price: <%= cart.TotalPrice %></h4>
+<div class="cart-product">
+    <div>ProductName</div>
+    <div>Price</div>
+    <div>Quantity</div>
+</div>
+<% cart.CartItems.forEach(function(cartItem){ %>
+    <div class="cart-product">
+        <div><%= cartItem.Product.ProductName %></div>
+        <div><%= cartItem.Product.Price %></div>
+        <div><%= cartItem.Quantity %></div>
+        <div><a href="/cart/delete-item/<%= cartItem.Product.Id %>">Delete</a></div>
+    </div>
+<% }) %>
+<%- include('./includes/footer.ejs') %>

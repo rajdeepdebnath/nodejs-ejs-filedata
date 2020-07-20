@@ -1,0 +1,10 @@
+<%- include('./includes/header.ejs') %>
+<%- include('./includes/nav.ejs') %>
+    <h3>Add product</h3>
+    <form id="addproductform" action="/admin/add-product" method="POST">
+        Product Name: <input type="text" name="productname" />
+        Price: <input type="text" name="price" />
+        Description: <input type="text" name="description" />
+        <input type="submit" value="Add Product">
+    </form>
+<%- include('./includes/footer.ejs') %>
